@@ -31,7 +31,7 @@ public class main {
                 "14. Qtech-3750-28\n" +
                 "15. Qtech-4610-28\n" +
                 "16. Topaz-2O-XX");
-        System.out.println("Введите номер нужного КД: ");
+        System.out.print("Введите номер нужного КД: ");
         int num = input.nextInt();
 
 
@@ -373,7 +373,7 @@ public class main {
                         "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
                         "\n" +
                         "Login:\t\tadmin\n" +
-                        "Password:\tadmin123");
+                        "Password:\tadmin123\n");
                 StringSelection stringSelection5 = new StringSelection(strRes5);
                 Clipboard clipboard5 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard5.setContents(stringSelection5, null);
@@ -436,7 +436,7 @@ public class main {
                         "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
                         "\n" +
                         "Login:\t\tadmin\n" +
-                        "Password:\tadmin123");
+                        "Password:\tadmin123\n");
                 StringSelection stringSelection6 = new StringSelection(strRes6);
                 Clipboard clipboard6 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard6.setContents(stringSelection6, null);
@@ -499,7 +499,7 @@ public class main {
                         "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
                         "\n" +
                         "Login:\t\tadmin\n" +
-                        "Password:\tadmin123");
+                        "Password:\tadmin123\n");
                 StringSelection stringSelection7 = new StringSelection(strRes7);
                 Clipboard clipboard7 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard7.setContents(stringSelection7, null);
@@ -622,7 +622,7 @@ public class main {
                                 "authentication-mode aaa\n" +
                                 "idle-timeout 10 1\n" +
                                 "q\n" +
-                                "q");
+                                "q\n");
 
                 String ip09 = input.nextLine();
                 System.out.print("Введите IP КД: ");
@@ -662,7 +662,7 @@ public class main {
                         "/* После перезагрузки подключиться к коммутатору */\n" +
                         "\n" +
                         "Login:\t\tadmin\n" +
-                        "Password:\tadmin123");
+                        "Password:\tadmin123\n");
                 StringSelection stringSelection9 = new StringSelection(strRes9);
                 Clipboard clipboard9 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard9.setContents(stringSelection9, null);
@@ -761,7 +761,7 @@ public class main {
                         "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
                         "\n" +
                         "Login:\t\tadmin\n" +
-                        "Password:\tadmin123");
+                        "Password:\tadmin123\n");
                 StringSelection stringSelection10 = new StringSelection(strRes10);
                 Clipboard clipboard10 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard10.setContents(stringSelection10, null);
@@ -869,7 +869,7 @@ public class main {
                                 "!\n" +
                                 "authentication line console login local\n" +
                                 "!\n" +
-                                "end");
+                                "end\n");
 
                 String ip012 = input.nextLine();
                 System.out.print("Введите IP КД: ");
@@ -908,7 +908,7 @@ public class main {
                         "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
                         "\n" +
                         "Login:\t\tadmin\n" +
-                        "Password:\tadmin123");
+                        "Password:\tadmin123\n");
                 StringSelection stringSelection12 = new StringSelection(strRes12);
                 Clipboard clipboard12 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard12.setContents(stringSelection12, null);
@@ -984,14 +984,14 @@ public class main {
                         "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
                         "\n" +
                         "Login:\t\tadmin\n" +
-                        "Password:\tadmin123");
+                        "Password:\tadmin123\n");
                 StringSelection stringSelection13 = new StringSelection(strRes13);
                 Clipboard clipboard13 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard13.setContents(stringSelection13, null);
                 break;
 
             case 14:
-                //Строка с телом конфига для qtech-3750-10-light.
+                //Строка с телом конфига для qtech-3750-28-light.
                 var fourteen = (
                                 "enable\n" +
                                 "config\n" +
@@ -999,31 +999,31 @@ public class main {
                                 "username admin privilege 15 password 0 admin123\n" +
                                 "!\n" +
                                 "hostname ==SYSNAME==\n" +
-                                "!\\n" +
+                                "!\n" +
                                 "vlan ==VLAN==\n" +
                                 " name nms\n" +
                                 "!\n" +
                                 "Interface Ethernet1/0/26\n" +
-                                " media-type copper\n" +
-                                " switchport mode trunk\n" +
-                                " switchport trunk allowed vlan ==VLAN==\n" +
+                                "media-type copper\n" +
+                                "switchport mode trunk\n" +
+                                "switchport trunk allowed vlan ==VLAN==\n" +
                                 "!\n" +
                                 "Interface Ethernet1/0/27\n" +
-                                " switchport mode trunk\n" +
-                                " switchport trunk allowed vlan ==VLAN==\n" +
+                                "switchport mode trunk\n" +
+                                "switchport trunk allowed vlan ==VLAN==\n" +
                                 "!\n" +
                                 "Interface Ethernet1/0/28\n" +
-                                " switchport mode trunk\n" +
-                                " switchport trunk allowed vlan ==VLAN==\n" +
+                                "switchport mode trunk\n" +
+                                "switchport trunk allowed vlan ==VLAN==\n" +
                                 "!\n" +
                                 "interface Vlan==VLAN==\n" +
-                                " ip address ==IP== ==MASK==\n" +
+                                "ip address ==IP== ==MASK==\n" +
                                 "!</br>\\n\\\n" +
                                 "ip route 0.0.0.0/0 ==GATEWAY==\n" +
                                 "!\n" +
                                 "authentication line console login local\n" +
                                 "!\n" +
-                                "\n");
+                                "end\n");
 
                 String ip014 = input.nextLine();
                 System.out.print("Введите IP КД: ");
@@ -1064,7 +1064,7 @@ public class main {
                         "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
                         "\n" +
                         "Login:\t\tadmin\n" +
-                        "Password:\tadmin123");
+                        "Password:\tadmin123\n");
                 StringSelection stringSelection14 = new StringSelection(strRes14);
                 Clipboard clipboard14 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard14.setContents(stringSelection14, null);
@@ -1081,23 +1081,23 @@ public class main {
                                 "hostname ==SYSNAME==\n" +
                                 "!\n" +
                                 "vlan ==VLAN==\n" +
-                                " name nms\n" +
+                                "name nms\n" +
                                 "!\n" +
                                 "Interface Ethernet1/0/26\n" +
-                                " media-type copper\n" +
-                                " switchport mode trunk\n" +
-                                " switchport trunk allowed vlan ==VLAN==\n" +
+                                "media-type copper\n" +
+                                "switchport mode trunk\n" +
+                                "switchport trunk allowed vlan ==VLAN==\n" +
                                 "!\n" +
                                 "Interface Ethernet1/0/27\n" +
-                                " switchport mode trunk\n" +
-                                " switchport trunk allowed vlan ==VLAN==\n" +
+                                "switchport mode trunk\n" +
+                                "switchport trunk allowed vlan ==VLAN==\n" +
                                 "!\n" +
                                 "Interface Ethernet1/0/28\n" +
-                                " switchport mode trunk\n" +
-                                " switchport trunk allowed vlan ==VLAN==\n" +
+                                "switchport mode trunk\n" +
+                                "switchport trunk allowed vlan ==VLAN==\n" +
                                 "!\n" +
                                 "interface Vlan==VLAN==\n" +
-                                " ip address ==IP== ==MASK==\n" +
+                                "ip address ==IP== ==MASK==\n" +
                                 "!\n" +
                                 "ip route 0.0.0.0/0 ==GATEWAY==\n" +
                                 "!\n" +
@@ -1144,7 +1144,7 @@ public class main {
                         "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
                         "\n" +
                         "Login:\t\tadmin\n" +
-                        "Password:\tadmin123");
+                        "Password:\tadmin123\n");
                 StringSelection stringSelection15 = new StringSelection(strRes15);
                 Clipboard clipboard15 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard15.setContents(stringSelection15, null);
@@ -1161,26 +1161,26 @@ public class main {
                                 "username admin privilege 15 password admin123\n" +
                                 "!\n" +
                                 "interface vlan 1\n" +
-                                " no ip address dhcp\n" +
+                                "no ip address dhcp\n" +
                                 "!\n" +
                                 "interface vlan ==VLAN==\n" +
-                                " ip address ==IP== ==MASK==\n" +
+                                "ip address ==IP== ==MASK==\n" +
                                 "!\n" +
                                 "interface gigabitethernet1/1/1\n" +
-                                " description UPLINK\n" +
-                                " switchport mode trunk\n" +
-                                " switchport trunk allowed vlan add ==VLAN==\n" +
+                                "description UPLINK\n" +
+                                "switchport mode trunk\n" +
+                                "switchport trunk allowed vlan add ==VLAN==\n" +
                                 " no shutdown\n" +
                                 "!\n" +
                                 "interface gigabitethernet1/1/2\n" +
-                                " description UPLINK\n" +
-                                " switchport mode trunk\n" +
-                                " switchport trunk allowed vlan add ==VLAN==\n" +
-                                " no shutdown\n" +
+                                "description UPLINK\n" +
+                                "switchport mode trunk\n" +
+                                "switchport trunk allowed vlan add ==VLAN==\n" +
+                                "no shutdown\n" +
                                 "!\n" +
                                 "exit\n" +
                                 "ip default-gateway ==GATEWAY==\n" +
-                                "exit");
+                                "exit\n");
 
                 String ip016 = input.nextLine();
                 System.out.print("Введите IP КД: ");
@@ -1239,7 +1239,7 @@ public class main {
 
 
         System.out.println("Для завершения нажмите ENTER.\n" +
-                "Конфигурация будет скопирована в буфер обмена." +
+                "Конфигурация будет скопирована в буфер обмена. \n" +
                 "╔═══╗╔═╗╔═╗╔══╗╔════╗\n" +
                 "║╔══╝╚╗╚╝╔╝╚╣─╝║╔╗╔╗║\n" +
                 "║╚══╗─╚╗╔╝──║║─╚╝║║╚╝\n" +
