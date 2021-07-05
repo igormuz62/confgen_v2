@@ -190,7 +190,7 @@ public class main {
                                 "no shutdown\n" +
                                 "vlan participation include ==VLAN==\n" +
                                 "vlan tagging ==VLAN==\n" +
-                                "exit</br>\n" +
+                                "exit\n" +
                                 "interface 0/28\n" +
                                 "no shutdown\n" +
                                 "vlan participation include ==VLAN==\n" +
@@ -235,6 +235,213 @@ public class main {
                 Clipboard clipboard3 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard3.setContents(stringSelection3, null);
                 break;
+
+            case 4:
+                //Строка с телом конфига для ALS-24110P-UCN-light.
+                var four = (
+                        "set prompt ==SYSNAME==\n" +
+                                "network parms ==IP== ==MASK== ==GATEWAY==\n" +
+                                "vlan database\n" +
+                                "vlan ==VLAN==\n" +
+                                "exit\n" +
+                                "network mgmt_vlan ==VLAN==\n" +
+                                "configure\n" +
+                                "clock timezone 3 minutes 0\n" +
+                                "passwords min-length 0\n" +
+                                "username \"admin\" password admin123 level 15\n" +
+                                "exit\n" +
+                                "interface 0/6\n" +
+                                "description \"UPLINK-fiber-port6\"\n" +
+                                "vlan participation include ==VLAN==\n" +
+                                "vlan tagging ==VLAN==\n" +
+                                "exit\n" +
+                                "interface 0/7\n" +
+                                "description \"UPLINK-fiber-port7\"\n" +
+                                "vlan participation include ==VLAN==\n" +
+                                "vlan tagging ==VLAN==\n" +
+                                "exit\n" +
+                                "interface 0/8\n" +
+                                "description \"UPLINK-fiber-port8\"\n" +
+                                "vlan participation include ==VLAN==\n" +
+                                "vlan tagging ==VLAN==\n" +
+                                "exit\n" +
+                                "interface 0/9\n" +
+                                "description \"UPLINK-fiber-port9\"\n" +
+                                "vlan participation include ==VLAN==\n" +
+                                "vlan tagging ==VLAN==\n" +
+                                "exit\n" +
+                                "exit\n");
+
+                String ip04 = input.nextLine();
+                System.out.print("Введите IP КД: ");
+                String ip4 = input.nextLine();
+                System.out.print("Введите Mask КД: ");
+                var mask4 = input.nextLine();
+                System.out.print("Введите IP шлюза КД: ");
+                var gateway4  = input.nextLine();
+                System.out.print("Введите номер VLAN: ");
+                var vlan4 = input.nextLine();
+                System.out.print("Введите Name КД: ");
+                var sysname4 = input.nextLine();
+
+                String strIp4 = four.replaceAll("==IP==",ip4);
+                String strMask4 = strIp4.replaceAll("==MASK==",mask4);
+                String strGv4 = strMask4.replaceAll("==GATEWAY==",gateway4);
+                String strVlan4 = strGv4.replaceAll("==VLAN==",vlan4);
+                String strRes4 = strVlan4.replaceAll("==SYSNAME==",sysname4);
+
+
+                System.out.print("Для подключения к коммутатору концентрации использовать порты 0/6-0/9\n" +
+                        "----------------НАЧАЛО КОНФИГУРАЦИИ----------------");
+
+                System.out.println(strRes4);
+                System.out.print("----------------КОНЕЦ КОНФИГУРАЦИИ----------------\n" +
+                        "/* Сохраняем конфигурацию с подтверждением */\n" +
+                        "\n" +
+                        "write memory\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* Перезагружаем коммутатор с подтверждением */\n" +
+                        "\n" +
+                        "reload\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
+                        "\n" +
+                        "Login:\t\tadmin\n" +
+                        "Password:\tadmin123\n" +
+                        "\n");
+                StringSelection stringSelection4 = new StringSelection(strRes4);
+                Clipboard clipboard4 = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard4.setContents(stringSelection4, null);
+                break;
+
+            case 5:
+                //Строка с телом конфига для Dlink-des1210-10-light.
+                var five = (
+                        "create account admin admin\n" +
+                                "admin123\n" +
+                                "admin123\n" +
+                                "enable password encryption\n" +
+                                "# Basic\n" +
+                                "config command_prompt \"==SYSNAME==\"\n" +
+                                "# Vlan\n" +
+                                "disable asymmetric_vlan\n" +
+                                "config vlan vlanid 1 delete 1-10\n" +
+                                "config vlan vlanid 1 advertisement disable\n" +
+                                "create vlan \"==VLAN==\" tag ==VLAN==\n" +
+                                "config vlan vlanid ==VLAN== delete 1-10\n" +
+                                "config vlan vlanid ==VLAN== add tagged 9-10\n" +
+                                "config vlan vlanid ==VLAN== advertisement disable\n" +
+                                "# IP\n" +
+                                "config ipif System ipaddress ==IP==/==MASK== vlan \"==VLAN==\"\n" +
+                                "create iproute default ==GATEWAY==");
+
+                String ip05 = input.nextLine();
+                System.out.print("Введите IP КД: ");
+                String ip5 = input.nextLine();
+                System.out.print("Введите Mask КД: ");
+                var mask5 = input.nextLine();
+                System.out.print("Введите IP шлюза КД: ");
+                var gateway5  = input.nextLine();
+                System.out.print("Введите номер VLAN: ");
+                var vlan5 = input.nextLine();
+                System.out.print("Введите Name КД: ");
+                var sysname5 = input.nextLine();
+
+                String strIp5 = five.replaceAll("==IP==",ip5);
+                String strMask5 = strIp5.replaceAll("==MASK==",mask5);
+                String strGv5 = strMask5.replaceAll("==GATEWAY==",gateway5);
+                String strVlan5 = strGv5.replaceAll("==VLAN==",vlan5);
+                String strRes5 = strVlan5.replaceAll("==SYSNAME==",sysname5);
+
+
+                System.out.print("Для подключения к коммутатору концентрации использовать порты 9-10\n" +
+                        "----------------НАЧАЛО КОНФИГУРАЦИИ----------------");
+
+                System.out.println(strRes5);
+                System.out.print("----------------КОНЕЦ КОНФИГУРАЦИИ----------------\n" +
+                        "/* Сохраняем конфигурацию */\n" +
+                        "\n" +
+                        "save\n" +
+                        "\n" +
+                        "/* Перезагружаем коммутатор с подтверждением */\n" +
+                        "\n" +
+                        "reboot\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
+                        "\n" +
+                        "Login:\t\tadmin\n" +
+                        "Password:\tadmin123");
+                StringSelection stringSelection5 = new StringSelection(strRes5);
+                Clipboard clipboard5 = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard5.setContents(stringSelection5, null);
+                break;
+
+            case 6:
+                //Строка с телом конфига для Dlink-des1210-28-light.
+                var six = (
+                        "create account admin admin\n" +
+                                "admin123\n" +
+                                "admin123\n" +
+                                "enable password encryption\n" +
+                                "# Basic\n" +
+                                "config command_prompt \"==SYSNAME==\"\n" +
+                                "# Vlan\n" +
+                                "disable asymmetric_vlan\n" +
+                                "config vlan vlanid 1 delete 1-28\n" +
+                                "config vlan vlanid 1 advertisement disable\n" +
+                                "create vlan \"==VLAN==\" tag ==VLAN==\n" +
+                                "config vlan vlanid ==VLAN== delete 1-28\n" +
+                                "config vlan vlanid ==VLAN== add tagged 27-28\n" +
+                                "config vlan vlanid ==VLAN== advertisement disable\n" +
+                                "# IP\n" +
+                                "config ipif System ipaddress ==IP==/==MASK== vlan \"==VLAN==\"\n" +
+                                "create iproute default ==GATEWAY==");
+
+                String ip06 = input.nextLine();
+                System.out.print("Введите IP КД: ");
+                String ip6 = input.nextLine();
+                System.out.print("Введите Mask КД: ");
+                var mask6 = input.nextLine();
+                System.out.print("Введите IP шлюза КД: ");
+                var gateway6  = input.nextLine();
+                System.out.print("Введите номер VLAN: ");
+                var vlan6 = input.nextLine();
+                System.out.print("Введите Name КД: ");
+                var sysname6 = input.nextLine();
+
+                String strIp6 = six.replaceAll("==IP==",ip6);
+                String strMask6 = strIp6.replaceAll("==MASK==",mask6);
+                String strGv6 = strMask6.replaceAll("==GATEWAY==",gateway6);
+                String strVlan6 = strGv6.replaceAll("==VLAN==",vlan6);
+                String strRes6 = strVlan6.replaceAll("==SYSNAME==",sysname6);
+
+
+                System.out.print("Для подключения к коммутатору концентрации использовать порты 27-28\n" +
+                        "----------------НАЧАЛО КОНФИГУРАЦИИ----------------");
+
+                System.out.println(strRes6);
+                System.out.print("----------------КОНЕЦ КОНФИГУРАЦИИ----------------\n" +
+                        "/* Сохраняем конфигурацию */\n" +
+                        "\n" +
+                        "save\n" +
+                        "\n" +
+                        "/* Перезагружаем коммутатор с подтверждением */\n" +
+                        "\n" +
+                        "reboot\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
+                        "\n" +
+                        "Login:\t\tadmin\n" +
+                        "Password:\tadmin123");
+                StringSelection stringSelection6 = new StringSelection(strRes6);
+                Clipboard clipboard6 = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard6.setContents(stringSelection6, null);
+                break;
+
 
             default:
                 System.out.println("Ошибка программа завершает работу");
