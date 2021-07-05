@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="confgen_v2:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/confgen_v2_jar</output-path>
+    <root id="archive" name="confgen_v2_jar.jar">
+      <element id="module-output" name="confgen_v2" />
+    </root>
+  </artifact>
+</component>
