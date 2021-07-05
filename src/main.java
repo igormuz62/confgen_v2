@@ -5,7 +5,19 @@ import java.util.Scanner;
 public class main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        System.out.print("Введите номер КД: ");
         int num = input.nextInt();
+        String ip1 = input.nextLine();
+        System.out.print("Введите IP КД: ");
+        String ip = input.nextLine();
+        System.out.print("Введите Mask КД: ");
+        var mask = input.nextLine();
+        System.out.print("Введите IP шлюза КД: ");
+        var gateway = input.nextLine();
+        System.out.print("Введите номер VLAN: ");
+        var vlan = input.nextLine();
+        System.out.print("Введите Name КД: ");
+        var sysname = input.nextLine();
         switch (num) {
             case 1:
                 var one = (
@@ -32,10 +44,17 @@ public class main {
                                 "exit\n" +
                                 "exit\n");
 
+                String strIp = one.replaceAll("==IP==",ip);
+                String strMask = strIp.replaceAll("==MASK==",mask);
+                String strGv = strMask.replaceAll("==GATEWAY==",gateway);
+                String strVlan = strGv.replaceAll("==VLAN==",vlan);
+                String strRes = strVlan.replaceAll("==SYSNAME==",sysname);
+
+
                 System.out.print("Для подключения к коммутатору концентрации использовать порты 0/9-0/10\n" +
                         "----------------НАЧАЛО КОНФИГУРАЦИИ----------------\n");
 
-                System.out.println(one);
+                System.out.println(strRes);
                 System.out.print("----------------КОНЕЦ КОНФИГУРАЦИИ----------------\n" +
                         "/* Сохраняем конфигурацию с подтверждением */\n" +
                         "write memory\n" +
