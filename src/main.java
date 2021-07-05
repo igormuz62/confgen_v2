@@ -575,6 +575,272 @@ public class main {
                 clipboard8.setContents(stringSelection8, null);
                 break;
 
+            case 9:
+                //Строка с телом конфига для huawei-s2326-light.
+                var nine = (
+                                "undo terminal debugging\n" +
+                                "undo terminal monitor\n" +
+                                "system\n" +
+                                "#\n" +
+                                "sysname ==SYSNAME==\n" +
+                                "vlan ==VLAN==\n" +
+                                "interface Vlanif==VLAN==\n" +
+                                "ip address ==IP== ==MASK==\n" +
+                                "#\n" +
+                                "aaa\n" +
+                                "authentication-scheme default\n" +
+                                "authorization-scheme default\n" +
+                                "accounting-scheme default\n" +
+                                "domain default\n" +
+                                "domain default_admin\n" +
+                                "local-user admin password cipher admin123\n" +
+                                "local-user admin privilege level 15\n" +
+                                "local-user admin ftp-directory flash:\n" +
+                                "local-user admin service-type telnet terminal ftp http\n" +
+                                "local-user anklav password cipher D/22a6V3a!L\\^:@]CG5HT_Q!!\n" +
+                                "local-user anklav privilege level 15\n" +
+                                "local-user anklav ftp-directory flash:\n" +
+                                "local-user anklav service-type telnet terminal ftp\n" +
+                                "#\n" +
+                                "ip route-static 0.0.0.0 0.0.0.0 ==GATEWAY==\n" +
+                                "#\n" +
+                                "interface GigabitEthernet0/0/1\n" +
+                                "undo port hybrid vlan 1\n" +
+                                "port hybrid tagged vlan ==VLAN==\n" +
+                                "combo-port auto\n" +
+                                "#\n" +
+                                "interface GigabitEthernet0/0/2\n" +
+                                "undo port hybrid vlan 1\n" +
+                                "port hybrid tagged vlan ==VLAN==\n" +
+                                "combo-port auto\n" +
+                                "#\n" +
+                                "user-interface maximum-vty 4\n" +
+                                "user-interface con 0\n" +
+                                "authentication-mode aaa\n" +
+                                "idle-timeout 0 0\n" +
+                                "user-interface vty 0 3\n" +
+                                "authentication-mode aaa\n" +
+                                "idle-timeout 10 1\n" +
+                                "q\n" +
+                                "q");
+
+                String ip09 = input.nextLine();
+                System.out.print("Введите IP КД: ");
+                String ip9 = input.nextLine();
+                System.out.print("Введите Mask КД: ");
+                var mask9 = input.nextLine();
+                System.out.print("Введите IP шлюза КД: ");
+                var gateway9  = input.nextLine();
+                System.out.print("Введите номер VLAN: ");
+                var vlan9 = input.nextLine();
+                System.out.print("Введите Name КД: ");
+                var sysname9 = input.nextLine();
+
+                String strIp9 = nine.replaceAll("==IP==",ip9);
+                String strMask9 = strIp9.replaceAll("==MASK==",mask9);
+                String strGv9 = strMask9.replaceAll("==GATEWAY==",gateway9);
+                String strVlan9 = strGv9.replaceAll("==VLAN==",vlan9);
+                String strRes9 = strVlan9.replaceAll("==SYSNAME==",sysname9);
+
+
+                System.out.print("Для подключения к коммутатору концентрации использовать порты GigabitEthernet0/0/1-GigabitEthernet0/0/2" +
+                        "----------------НАЧАЛО КОНФИГУРАЦИИ----------------");
+
+                System.out.println(strRes9);
+                System.out.print("----------------КОНЕЦ КОНФИГУРАЦИИ----------------\n" +
+                        "/* Сохраняем конфигурацию с подтверждением */\n" +
+                        "\n" +
+                        "save\n" +
+                        "y\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* Перезагружаем коммутатор */\n" +
+                        "\n" +
+                        "reboot\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* После перезагрузки подключиться к коммутатору */\n" +
+                        "\n" +
+                        "Login:\t\tadmin\n" +
+                        "Password:\tadmin123");
+                StringSelection stringSelection9 = new StringSelection(strRes9);
+                Clipboard clipboard9 = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard9.setContents(stringSelection9, null);
+                break;
+
+            case 10:
+                //Строка с телом конфига для huawei-s2328-light.
+                var ten = (
+                                "undo terminal debugging\n" +
+                                "undo terminal monitor\n" +
+                                "system\n" +
+                                "#\n" +
+                                "sysname ==SYSNAME==\n" +
+                                "vlan ==VLAN==\n" +
+                                "interface Vlanif==VLAN==\n" +
+                                "ip address ==IP== ==MASK==\n" +
+                                "#\n" +
+                                "aaa\n" +
+                                "authentication-scheme default\n" +
+                                "authorization-scheme default\n" +
+                                "accounting-scheme default\n" +
+                                "domain default\n" +
+                                "domain default_admin\n" +
+                                "local-user admin password cipher admin123\n" +
+                                "local-user admin privilege level 15\n" +
+                                "local-user admin ftp-directory flash:\n" +
+                                "local-user admin service-type telnet terminal ftp http\n" +
+                                "local-user anklav password cipher %@%@c@W\"6X)Qw>d4##6lB,G3=2!h%@%@\n" +
+                                "local-user anklav privilege level 15\n" +
+                                "local-user anklav ftp-directory flash:\n" +
+                                "local-user anklav service-type telnet terminal ftp\n" +
+                                "#\n" +
+                                "ip route-static 0.0.0.0 0.0.0.0 ==GATEWAY==\n" +
+                                "#\n" +
+                                "interface GigabitEthernet0/0/1\n" +
+                                "undo port hybrid vlan 1\n" +
+                                "port hybrid tagged vlan ==VLAN==\n" +
+                                "#\n" +
+                                "interface GigabitEthernet0/0/2\n" +
+                                "undo port hybrid vlan 1\n" +
+                                "port hybrid tagged vlan ==VLAN==\n" +
+                                "#\n" +
+                                "interface GigabitEthernet0/0/3\n" +
+                                "undo port hybrid vlan 1\n" +
+                                "port hybrid tagged vlan ==VLAN==\n" +
+                                "#\n" +
+                                "interface GigabitEthernet0/0/4\n" +
+                                "undo port hybrid vlan 1\n" +
+                                "port hybrid tagged vlan ==VLAN==\n" +
+                                "#\n" +
+                                "user-interface maximum-vty 4\n" +
+                                "user-interface con 0\n" +
+                                "authentication-mode aaa\n" +
+                                "idle-timeout 0 0\n" +
+                                "user-interface vty 0 3\n" +
+                                "authentication-mode aaa\n" +
+                                "idle-timeout 10 1\n" +
+                                "q\n" +
+                                "q\n");
+
+                String ip010 = input.nextLine();
+                System.out.print("Введите IP КД: ");
+                String ip10 = input.nextLine();
+                System.out.print("Введите Mask КД: ");
+                var mask10 = input.nextLine();
+                System.out.print("Введите IP шлюза КД: ");
+                var gateway10  = input.nextLine();
+                System.out.print("Введите номер VLAN: ");
+                var vlan10 = input.nextLine();
+                System.out.print("Введите Name КД: ");
+                var sysname10 = input.nextLine();
+
+                String strIp10 = ten.replaceAll("==IP==",ip10);
+                String strMask10 = strIp10.replaceAll("==MASK==",mask10);
+                String strGv10 = strMask10.replaceAll("==GATEWAY==",gateway10);
+                String strVlan10 = strGv10.replaceAll("==VLAN==",vlan10);
+                String strRes10 = strVlan10.replaceAll("==SYSNAME==",sysname10);
+
+
+                System.out.print("Для подключения к коммутатору концентрации использовать порты GigabitEthernet0/0/1-GigabitEthernet0/0/4" +
+                        "----------------НАЧАЛО КОНФИГУРАЦИИ----------------");
+
+                System.out.println(strRes10);
+                System.out.print("----------------КОНЕЦ КОНФИГУРАЦИИ----------------\n" +
+                        "/* Сохраняем конфигурацию с подтверждением */\n" +
+                        "\n" +
+                        "save\n" +
+                        "y\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* Перезагружаем коммутатор с подтверждением */\n" +
+                        "\n" +
+                        "reboot\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
+                        "\n" +
+                        "Login:\t\tadmin\n" +
+                        "Password:\tadmin123");
+                StringSelection stringSelection10 = new StringSelection(strRes10);
+                Clipboard clipboard10 = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard10.setContents(stringSelection10, null);
+                break;
+
+            case 11:
+                //Строка с телом конфига для qtech-2850-28-light.
+                var eleven = (
+                                                "enable\n" +
+                                                "config\n" +
+                                                "!\n" +
+                                                "username admin privilege 15 password 0 admin123\n" +
+                                                "!\n" +
+                                                "hostname ==SYSNAME==\n" +
+                                                "!\n" +
+                                                "vlan ==VLAN==\n" +
+                                                "name nms\n" +
+                                                "!\n" +
+                                                "Interface Ethernet1/0/26\n" +
+                                                "media-type copper \n" +
+                                                "switchport mode trunk\n" +
+                                                "switchport trunk allowed vlan ==VLAN==\n" +
+                                                "!\n" +
+                                                "Interface Ethernet1/0/27\n" +
+                                                "switchport mode trunk\n" +
+                                                "switchport trunk allowed vlan ==VLAN==\n" +
+                                                "!\n" +
+                                                "Interface Ethernet1/0/28\n" +
+                                                "switchport mode trunk\n" +
+                                                "switchport trunk allowed vlan ==VLAN==\n" +
+                                                "!\n" +
+                                                "interface Vlan==VLAN==\n" +
+                                                "ip address ==IP== ==MASK==\n" +
+                                                "!\n" +
+                                                "ip route 0.0.0.0/0 ==GATEWAY==\n" +
+                                                "!\n" +
+                                                "authentication line console login local\n" +
+                                                "!\n" +
+                                                "end\n");
+
+                String ip011 = input.nextLine();
+                System.out.print("Введите IP КД: ");
+                String ip11 = input.nextLine();
+                System.out.print("Введите Mask КД: ");
+                var mask11 = input.nextLine();
+                System.out.print("Введите IP шлюза КД: ");
+                var gateway11  = input.nextLine();
+                System.out.print("Введите номер VLAN: ");
+                var vlan11 = input.nextLine();
+                System.out.print("Введите Name КД: ");
+                var sysname11 = input.nextLine();
+
+                String strIp11 = eleven.replaceAll("==IP==",ip11);
+                String strMask11 = strIp11.replaceAll("==MASK==",mask11);
+                String strGv11 = strMask11.replaceAll("==GATEWAY==",gateway11);
+                String strVlan11 = strGv11.replaceAll("==VLAN==",vlan11);
+                String strRes11 = strVlan11.replaceAll("==SYSNAME==",sysname11);
+
+
+                System.out.print("Для подключения к коммутатору концентрации по оптике использовать порты Ethernet1/0/27-Ethernet1/0/28\n" +
+                        "Для подключения по меди использовать порт Ethernet1/0/26\n" +
+                        "----------------НАЧАЛО КОНФИГУРАЦИИ----------------");
+
+                System.out.println(strRes11);
+                System.out.print("----------------КОНЕЦ КОНФИГУРАЦИИ----------------\n" +
+                        "/* Сохраняем конфигурацию с подтверждением */\n" +
+                        "write\n" +
+                        "y<\n" +
+                        "/* Перезагружаем коммутатор с подтверждением */\n" +
+                        "reload\n" +
+                        "y\n" +
+                        "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
+                        "Login:\t\tadmin\n" +
+                        "Password:\tadmin123\n");
+                StringSelection stringSelection11 = new StringSelection(strRes11);
+                Clipboard clipboard11 = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard11.setContents(stringSelection11, null);
+                break;
+
             default:
                 System.out.println("Ошибка программа завершает работу");
         }
