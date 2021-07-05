@@ -841,13 +841,411 @@ public class main {
                 clipboard11.setContents(stringSelection11, null);
                 break;
 
+            case 12:
+                //Строка с телом конфига для qtech-3500-10T-light.
+                var twelve = (
+                                "enable\n" +
+                                "config\n" +
+                                "!\n" +
+                                "username admin privilege 15 password 0 admin123\n" +
+                                "!\n" +
+                                "hostname ==SYSNAME==\n" +
+                                "!\n" +
+                                "vlan ==VLAN==\n" +
+                                " name nms\n" +
+                                "!\n" +
+                                "Interface Ethernet1/0/9\n" +
+                                " switchport mode trunk\n" +
+                                " switchport trunk allowed vlan ==VLAN==\n" +
+                                "!\n" +
+                                "Interface Ethernet1/0/10\n" +
+                                " switchport mode trunk\n" +
+                                " switchport trunk allowed vlan ==VLAN==\n" +
+                                "!\n" +
+                                "interface Vlan==VLAN==\n" +
+                                " ip address ==IP== ==MASK==\n" +
+                                "!\n" +
+                                "ip route 0.0.0.0/0 ==GATEWAY==\n" +
+                                "!\n" +
+                                "authentication line console login local\n" +
+                                "!\n" +
+                                "end");
+
+                String ip012 = input.nextLine();
+                System.out.print("Введите IP КД: ");
+                String ip12 = input.nextLine();
+                System.out.print("Введите Mask КД: ");
+                var mask12 = input.nextLine();
+                System.out.print("Введите IP шлюза КД: ");
+                var gateway12  = input.nextLine();
+                System.out.print("Введите номер VLAN: ");
+                var vlan12 = input.nextLine();
+                System.out.print("Введите Name КД: ");
+                var sysname12 = input.nextLine();
+
+                String strIp12 = twelve.replaceAll("==IP==",ip12);
+                String strMask12 = strIp12.replaceAll("==MASK==",mask12);
+                String strGv12 = strMask12.replaceAll("==GATEWAY==",gateway12);
+                String strVlan12 = strGv12.replaceAll("==VLAN==",vlan12);
+                String strRes12 = strVlan12.replaceAll("==SYSNAME==",sysname12);
+
+
+                System.out.print("Для подключения к коммутатору концентрации по оптике использовать порты Ethernet1/0/9-1/0/10 \n" +
+                        "----------------НАЧАЛО КОНФИГУРАЦИИ----------------");
+
+                System.out.println(strRes12);
+                System.out.print("----------------КОНЕЦ КОНФИГУРАЦИИ----------------\n" +
+                        "/* Сохраняем конфигурацию с подтверждением */\n" +
+                        "\n" +
+                        "write\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* Перезагружаем коммутатор с подтверждением */\n" +
+                        "\n" +
+                        "reload\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
+                        "\n" +
+                        "Login:\t\tadmin\n" +
+                        "Password:\tadmin123");
+                StringSelection stringSelection12 = new StringSelection(strRes12);
+                Clipboard clipboard12 = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard12.setContents(stringSelection12, null);
+                break;
+
+            case 13:
+                //Строка с телом конфига для qtech-3750-10-light.
+                var thirteen = (
+                                "enable\n" +
+                                "config\n" +
+                                "!\n" +
+                                "username admin privilege 15 password 0 admin123\n" +
+                                "!\n" +
+                                "hostname ==SYSNAME==\n" +
+                                "!\n" +
+                                "vlan ==VLAN==\n" +
+                                "name nms\n" +
+                                "!\n" +
+                                "Interface Ethernet1/0/9\n" +
+                                "media-type copper\n" +
+                                "switchport mode trunk\n" +
+                                "switchport trunk allowed vlan ==VLAN==\n" +
+                                "!\n" +
+                                "Interface Ethernet1/0/10\n" +
+                                "switchport mode trunk\\n" +
+                                "switchport trunk allowed vlan <VLAN>\n" +
+                                "!\n" +
+                                "interface Vlan==VLAN==\n" +
+                                "ip address ==IP== ==MASK==\n" +
+                                "!\n" +
+                                "ip route 0.0.0.0/0 ==GATEWAY==\n" +
+                                "!\n" +
+                                "authentication line console login local\n" +
+                                "!\n" +
+                                "end\n");
+
+                String ip013 = input.nextLine();
+                System.out.print("Введите IP КД: ");
+                String ip13 = input.nextLine();
+                System.out.print("Введите Mask КД: ");
+                var mask13 = input.nextLine();
+                System.out.print("Введите IP шлюза КД: ");
+                var gateway13  = input.nextLine();
+                System.out.print("Введите номер VLAN: ");
+                var vlan13 = input.nextLine();
+                System.out.print("Введите Name КД: ");
+                var sysname13 = input.nextLine();
+
+                String strIp13 = thirteen.replaceAll("==IP==",ip13);
+                String strMask13 = strIp13.replaceAll("==MASK==",mask13);
+                String strGv13 = strMask13.replaceAll("==GATEWAY==",gateway13);
+                String strVlan13 = strGv13.replaceAll("==VLAN==",vlan13);
+                String strRes13 = strVlan13.replaceAll("==SYSNAME==",sysname13);
+
+
+                System.out.print(
+                        "Для подключения к коммутатору концентрации по оптике использовать порт Ethernet1/0/10\n" +
+                        "Для подключения по меди использовать порт Ethernet1/0/9\n" +
+                        "----------------НАЧАЛО КОНФИГУРАЦИИ----------------");
+
+                System.out.println(strRes13);
+                System.out.print("----------------КОНЕЦ КОНФИГУРАЦИИ----------------\n" +
+                        "/* Сохраняем конфигурацию с подтверждением */\n" +
+                        "\n" +
+                        "write\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* Перезагружаем коммутатор с подтверждением */\n" +
+                        "\n" +
+                        "reload\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
+                        "\n" +
+                        "Login:\t\tadmin\n" +
+                        "Password:\tadmin123");
+                StringSelection stringSelection13 = new StringSelection(strRes13);
+                Clipboard clipboard13 = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard13.setContents(stringSelection13, null);
+                break;
+
+            case 14:
+                //Строка с телом конфига для qtech-3750-10-light.
+                var fourteen = (
+                                "enable\n" +
+                                "config\n" +
+                                "!\n" +
+                                "username admin privilege 15 password 0 admin123\n" +
+                                "!\n" +
+                                "hostname ==SYSNAME==\n" +
+                                "!\\n" +
+                                "vlan ==VLAN==\n" +
+                                " name nms\n" +
+                                "!\n" +
+                                "Interface Ethernet1/0/26\n" +
+                                " media-type copper\n" +
+                                " switchport mode trunk\n" +
+                                " switchport trunk allowed vlan ==VLAN==\n" +
+                                "!\n" +
+                                "Interface Ethernet1/0/27\n" +
+                                " switchport mode trunk\n" +
+                                " switchport trunk allowed vlan ==VLAN==\n" +
+                                "!\n" +
+                                "Interface Ethernet1/0/28\n" +
+                                " switchport mode trunk\n" +
+                                " switchport trunk allowed vlan ==VLAN==\n" +
+                                "!\n" +
+                                "interface Vlan==VLAN==\n" +
+                                " ip address ==IP== ==MASK==\n" +
+                                "!</br>\\n\\\n" +
+                                "ip route 0.0.0.0/0 ==GATEWAY==\n" +
+                                "!\n" +
+                                "authentication line console login local\n" +
+                                "!\n" +
+                                "\n");
+
+                String ip014 = input.nextLine();
+                System.out.print("Введите IP КД: ");
+                String ip14 = input.nextLine();
+                System.out.print("Введите Mask КД: ");
+                var mask14 = input.nextLine();
+                System.out.print("Введите IP шлюза КД: ");
+                var gateway14  = input.nextLine();
+                System.out.print("Введите номер VLAN: ");
+                var vlan14 = input.nextLine();
+                System.out.print("Введите Name КД: ");
+                var sysname14 = input.nextLine();
+
+                String strIp14 = fourteen.replaceAll("==IP==",ip14);
+                String strMask14 = strIp14.replaceAll("==MASK==",mask14);
+                String strGv14 = strMask14.replaceAll("==GATEWAY==",gateway14);
+                String strVlan14 = strGv14.replaceAll("==VLAN==",vlan14);
+                String strRes14 = strVlan14.replaceAll("==SYSNAME==",sysname14);
+
+
+                System.out.print(
+                                "Для подключения к коммутатору концентрации по оптике использовать порты Ethernet1/0/27-Ethernet1/0/28\n" +
+                                "Для подключения по меди использовать порт Ethernet1/0/26\n" +
+                                "----------------НАЧАЛО КОНФИГУРАЦИИ----------------");
+
+                System.out.println(strRes14);
+                System.out.print("----------------КОНЕЦ КОНФИГУРАЦИИ----------------\n" +
+                        "/* Сохраняем конфигурацию с подтверждением */\n" +
+                        "\n" +
+                        "write\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* Перезагружаем коммутатор с подтверждением */\n" +
+                        "\n" +
+                        "reload\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
+                        "\n" +
+                        "Login:\t\tadmin\n" +
+                        "Password:\tadmin123");
+                StringSelection stringSelection14 = new StringSelection(strRes14);
+                Clipboard clipboard14 = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard14.setContents(stringSelection14, null);
+                break;
+
+            case 15:
+                //Строка с телом конфига для qtech-4610-28-light.
+                var fiveteen = (
+                                "enable\n" +
+                                "config\n" +
+                                "!\n" +
+                                "username admin privilege 15 password 0 admin123\\n" +
+                                "!\n" +
+                                "hostname ==SYSNAME==\n" +
+                                "!\n" +
+                                "vlan ==VLAN==\n" +
+                                " name nms\n" +
+                                "!\n" +
+                                "Interface Ethernet1/0/26\n" +
+                                " media-type copper\n" +
+                                " switchport mode trunk\n" +
+                                " switchport trunk allowed vlan ==VLAN==\n" +
+                                "!\n" +
+                                "Interface Ethernet1/0/27\n" +
+                                " switchport mode trunk\n" +
+                                " switchport trunk allowed vlan ==VLAN==\n" +
+                                "!\n" +
+                                "Interface Ethernet1/0/28\n" +
+                                " switchport mode trunk\n" +
+                                " switchport trunk allowed vlan ==VLAN==\n" +
+                                "!\n" +
+                                "interface Vlan==VLAN==\n" +
+                                " ip address ==IP== ==MASK==\n" +
+                                "!\n" +
+                                "ip route 0.0.0.0/0 ==GATEWAY==\n" +
+                                "!\n" +
+                                "authentication line console login local\n" +
+                                "!\n" +
+                                "end\n");
+
+                String ip015 = input.nextLine();
+                System.out.print("Введите IP КД: ");
+                String ip15 = input.nextLine();
+                System.out.print("Введите Mask КД: ");
+                var mask15 = input.nextLine();
+                System.out.print("Введите IP шлюза КД: ");
+                var gateway15  = input.nextLine();
+                System.out.print("Введите номер VLAN: ");
+                var vlan15 = input.nextLine();
+                System.out.print("Введите Name КД: ");
+                var sysname15 = input.nextLine();
+
+                String strIp15 = fiveteen.replaceAll("==IP==",ip15);
+                String strMask15 = strIp15.replaceAll("==MASK==",mask15);
+                String strGv15 = strMask15.replaceAll("==GATEWAY==",gateway15);
+                String strVlan15 = strGv15.replaceAll("==VLAN==",vlan15);
+                String strRes15 = strVlan15.replaceAll("==SYSNAME==",sysname15);
+
+
+                System.out.print(
+                        "Для подключения к коммутатору концентрации по оптике использовать порты Ethernet1/0/27-Ethernet1/0/28\n" +
+                                "Для подключения по меди использовать порт Ethernet1/0/26\n" +
+                                "----------------НАЧАЛО КОНФИГУРАЦИИ----------------");
+
+                System.out.println(strRes15);
+                System.out.print("----------------КОНЕЦ КОНФИГУРАЦИИ----------------\n" +
+                        "/* Сохраняем конфигурацию с подтверждением */\n" +
+                        "\n" +
+                        "write\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* Перезагружаем коммутатор с подтверждением */\n" +
+                        "\n" +
+                        "reload\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
+                        "\n" +
+                        "Login:\t\tadmin\n" +
+                        "Password:\tadmin123");
+                StringSelection stringSelection15 = new StringSelection(strRes15);
+                Clipboard clipboard15 = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard15.setContents(stringSelection15, null);
+                break;
+
+            case 16:
+                //Строка с телом конфига для topaz-2O-XX-light.
+                var sixteen = (
+                        "configure\n" +
+                                "vlan database\n" +
+                                "vlan ==VLAN==\n" +
+                                "exit\n" +
+                                "hostname ==SYSNAME==\n" +
+                                "username admin privilege 15 password admin123\n" +
+                                "!\n" +
+                                "interface vlan 1\n" +
+                                " no ip address dhcp\n" +
+                                "!\n" +
+                                "interface vlan ==VLAN==\n" +
+                                " ip address ==IP== ==MASK==\n" +
+                                "!\n" +
+                                "interface gigabitethernet1/1/1\n" +
+                                " description UPLINK\n" +
+                                " switchport mode trunk\n" +
+                                " switchport trunk allowed vlan add ==VLAN==\n" +
+                                " no shutdown\n" +
+                                "!\n" +
+                                "interface gigabitethernet1/1/2\n" +
+                                " description UPLINK\n" +
+                                " switchport mode trunk\n" +
+                                " switchport trunk allowed vlan add ==VLAN==\n" +
+                                " no shutdown\n" +
+                                "!\n" +
+                                "exit\n" +
+                                "ip default-gateway ==GATEWAY==\n" +
+                                "exit");
+
+                String ip016 = input.nextLine();
+                System.out.print("Введите IP КД: ");
+                String ip16 = input.nextLine();
+                System.out.print("Введите Mask КД: ");
+                var mask16 = input.nextLine();
+                System.out.print("Введите IP шлюза КД: ");
+                var gateway16  = input.nextLine();
+                System.out.print("Введите номер VLAN: ");
+                var vlan16 = input.nextLine();
+                System.out.print("Введите Name КД: ");
+                var sysname16 = input.nextLine();
+
+                String strIp16 = sixteen.replaceAll("==IP==",ip16);
+                String strMask16 = strIp16.replaceAll("==MASK==",mask16);
+                String strGv16 = strMask16.replaceAll("==GATEWAY==",gateway16);
+                String strVlan16 = strGv16.replaceAll("==VLAN==",vlan16);
+                String strRes16 = strVlan16.replaceAll("==SYSNAME==",sysname16);
+
+
+                System.out.print(
+                        "Для подключения к коммутатору концентрации использовать порты Ethernet1/1/1-Ethernet1/1/2 \n" +
+                                "----------------НАЧАЛО КОНФИГУРАЦИИ----------------");
+
+                System.out.println(strRes16);
+                System.out.print("----------------КОНЕЦ КОНФИГУРАЦИИ----------------\n" +
+                        "/* Сохраняем конфигурацию с подтверждением */\n" +
+                        "\n" +
+                        "write mem\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* Перезагружаем коммутатор с подтверждением */\n" +
+                        "\n" +
+                        "reload\n" +
+                        "y\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
+                        "\n" +
+                        "Login:\t\tadmin\n" +
+                        "Password:\tadmin123\n");
+                StringSelection stringSelection16 = new StringSelection(strRes16);
+                Clipboard clipboard16 = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard16.setContents(stringSelection16, null);
+                break;
+
             default:
-                System.out.println("Ошибка программа завершает работу");
+                System.out.println("Ошибка программа завершает работу \n" +
+                        "╔═══╗╔═══╗╔═══╗╔═══╗╔═══╗\n" +
+                        "║╔══╝║╔═╗║║╔═╗║║╔═╗║║╔═╗║\n" +
+                        "║╚══╗║╚═╝║║╚═╝║║║─║║║╚═╝║\n" +
+                        "║╔══╝║╔╗╔╝║╔╗╔╝║║─║║║╔╗╔╝\n" +
+                        "║╚══╗║║║╚╗║║║╚╗║╚═╝║║║║╚╗\n" +
+                        "╚═══╝╚╝╚═╝╚╝╚═╝╚═══╝╚╝╚═╝");
         }
 
 
         System.out.println("Для завершения нажмите ENTER.\n" +
-                "Конфигурация будет скопирована в буфер обмена.");
+                "Конфигурация будет скопирована в буфер обмена." +
+                "╔═══╗╔═╗╔═╗╔══╗╔════╗\n" +
+                "║╔══╝╚╗╚╝╔╝╚╣─╝║╔╗╔╗║\n" +
+                "║╚══╗─╚╗╔╝──║║─╚╝║║╚╝\n" +
+                "║╔══╝─╔╝╚╗──║║───║║──\n" +
+                "║╚══╗╔╝╔╗╚╗╔╣─╗──║║──\n" +
+                "╚═══╝╚═╝╚═╝╚══╝──╚╝──");
         var num000 = input.nextLine();
 
     }
