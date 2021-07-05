@@ -166,7 +166,7 @@ public class main {
             case 3:
                 //Строка с телом конфига для ALS-241XX-24.
                 var three = (
-                        "set prompt \"==SYSNAME==\"\n" +
+                                "set prompt \"==SYSNAME==\"\n" +
                                 "network parms ==IP== ==MASK== ==GATEWAY==\n" +
                                 "vlan database\n" +
                                 "vlan ==VLAN==\n" +
@@ -239,7 +239,7 @@ public class main {
             case 4:
                 //Строка с телом конфига для ALS-24110P-UCN-light.
                 var four = (
-                        "set prompt ==SYSNAME==\n" +
+                                "set prompt ==SYSNAME==\n" +
                                 "network parms ==IP== ==MASK== ==GATEWAY==\n" +
                                 "vlan database\n" +
                                 "vlan ==VLAN==\n" +
@@ -319,7 +319,7 @@ public class main {
             case 5:
                 //Строка с телом конфига для Dlink-des1210-10-light.
                 var five = (
-                        "create account admin admin\n" +
+                                "create account admin admin\n" +
                                 "admin123\n" +
                                 "admin123\n" +
                                 "enable password encryption\n" +
@@ -382,7 +382,7 @@ public class main {
             case 6:
                 //Строка с телом конфига для Dlink-des1210-28-light.
                 var six = (
-                        "create account admin admin\n" +
+                                "create account admin admin\n" +
                                 "admin123\n" +
                                 "admin123\n" +
                                 "enable password encryption\n" +
@@ -442,6 +442,138 @@ public class main {
                 clipboard6.setContents(stringSelection6, null);
                 break;
 
+            case 7:
+                //Строка с телом конфига для Dlink-des3200-28.
+                var seven = (
+                                "create account admin admin\n" +
+                                "admin123\n" +
+                                "admin123\n" +
+                                "enable password encryption\n" +
+                                "# Basic\n" +
+                                "config command_prompt ==SYSNAME==\n" +
+                                "# Vlan\n" +
+                                "disable asymmetric_vlan\n" +
+                                "config vlan vlanid 1 delete 1-28\n" +
+                                "config vlan vlanid 1 advertisement disable\n" +
+                                "create vlan \"==VLAN==\" tag ==VLAN==\n" +
+                                "config vlan vlanid ==VLAN== delete 1-28\n" +
+                                "config vlan vlanid ==VLAN== add tagged 27-28\n" +
+                                "config vlan vlanid ==VLAN== advertisement disable\n" +
+                                "# IP\n" +
+                                "config ipif System ipaddress ==IP==/==MASK== vlan \"==VLAN==\"\n" +
+                                "create iproute default ==GATEWAY==");
+
+                String ip07 = input.nextLine();
+                System.out.print("Введите IP КД: ");
+                String ip7 = input.nextLine();
+                System.out.print("Введите Mask КД: ");
+                var mask7 = input.nextLine();
+                System.out.print("Введите IP шлюза КД: ");
+                var gateway7  = input.nextLine();
+                System.out.print("Введите номер VLAN: ");
+                var vlan7 = input.nextLine();
+                System.out.print("Введите Name КД: ");
+                var sysname7 = input.nextLine();
+
+                String strIp7 = seven.replaceAll("==IP==",ip7);
+                String strMask7 = strIp7.replaceAll("==MASK==",mask7);
+                String strGv7 = strMask7.replaceAll("==GATEWAY==",gateway7);
+                String strVlan7 = strGv7.replaceAll("==VLAN==",vlan7);
+                String strRes7 = strVlan7.replaceAll("==SYSNAME==",sysname7);
+
+
+                System.out.print("Для подключения к коммутатору концентрации использовать порты 27-28\n" +
+                        "----------------НАЧАЛО КОНФИГУРАЦИИ----------------");
+
+                System.out.println(strRes7);
+                System.out.print("----------------КОНЕЦ КОНФИГУРАЦИИ----------------\n" +
+                        "/* Сохраняем конфигурацию */\n" +
+                        "\n" +
+                        "save\n" +
+                        "\n" +
+                        "/* Перезагружаем коммутатор с подтверждением */\n" +
+                        "\n" +
+                        "reboot\n" +
+                        "y\n" +
+                        "\n" +
+                        "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
+                        "\n" +
+                        "Login:\t\tadmin\n" +
+                        "Password:\tadmin123");
+                StringSelection stringSelection7 = new StringSelection(strRes7);
+                Clipboard clipboard7 = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard7.setContents(stringSelection7, null);
+                break;
+
+            case 8:
+                //Строка с телом конфига для Eltex_mes3324f_light.
+                var eith = (
+                                "enable\n" +
+                                "config\n" +
+                                "!\n" +
+                                "hostname ==SYSNAME==\n" +
+                                "!\n" +
+                                "vlan 1-4094\n" +
+                                "vlan ==VLAN== name nms\n" +
+                                "interface Vlan ==VLAN==\n" +
+                                "ip address ==IP== ==MASK==\n" +
+                                "exit\n" +
+                                "ip route 0.0.0.0 0.0.0.0 ==GATEWAY==\n" +
+                                "!\n" +
+                                "no spanning-tree\n" +
+                                "!\n" +
+                                "aaa authentication login auth default local\n" +
+                                "aaa authentication mode break\n" +
+                                "username admin password admin123 privilege 15\n" +
+                                "enable password level 15 admin123\n" +
+                                "!\n" +
+                                "interface range GigabitEthernet1/0/23-24\n" +
+                                "switchport mode trunk\n" +
+                                "switchport trunk allowed vlan add <VLAN>\n" +
+                                "exit\n" +
+                                "interface range TengigabitEthernet1/0/1-4\n" +
+                                "switchport mode trunk\n" +
+                                "switchport trunk allowed vlan add <VLAN>\n" +
+                                "end\n");
+
+                String ip08 = input.nextLine();
+                System.out.print("Введите IP КД: ");
+                String ip8 = input.nextLine();
+                System.out.print("Введите Mask КД: ");
+                var mask8 = input.nextLine();
+                System.out.print("Введите IP шлюза КД: ");
+                var gateway8  = input.nextLine();
+                System.out.print("Введите номер VLAN: ");
+                var vlan8 = input.nextLine();
+                System.out.print("Введите Name КД: ");
+                var sysname8 = input.nextLine();
+
+                String strIp8 = eith.replaceAll("==IP==",ip8);
+                String strMask8 = strIp8.replaceAll("==MASK==",mask8);
+                String strGv8 = strMask8.replaceAll("==GATEWAY==",gateway8);
+                String strVlan8 = strGv8.replaceAll("==VLAN==",vlan8);
+                String strRes8 = strVlan8.replaceAll("==SYSNAME==",sysname8);
+
+
+                System.out.print("ДДля подключения к коммутатору концентрации по оптике использовать порты TenGigabitEthernet1/0/1-1/0/4 или GigabitEthernet 1/0/23-1/0/24\n" +
+                        "----------------НАЧАЛО КОНФИГУРАЦИИ----------------");
+
+                System.out.println(strRes8);
+                System.out.print("----------------КОНЕЦ КОНФИГУРАЦИИ----------------\n" +
+                        "/* Сохраняем конфигурацию с подтверждением */\n" +
+                        "write\n" +
+                        "y\n" +
+                        "/* Перезагружаем коммутатор с подтверждением */\n" +
+                        "reload\n" +
+                        "y\n" +
+                        "/* После перезагрузки подключиться к коммутатору для проверки */\n" +
+                        "Login:\t\tadmin\n" +
+                        "Password:\tadmin123\n" +
+                        "\n");
+                StringSelection stringSelection8 = new StringSelection(strRes8);
+                Clipboard clipboard8 = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard8.setContents(stringSelection8, null);
+                break;
 
             default:
                 System.out.println("Ошибка программа завершает работу");
