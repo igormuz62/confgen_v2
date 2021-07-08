@@ -5,8 +5,9 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 
 public class main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Scanner input = new Scanner(System.in);
+        labelStart:
         System.out.println(
                 "╔═══╗╔═══╗╔═╗─╔╗╔═══╗╔══╗╔═══╗╔═══╗╔═══╗╔═╗─╔╗\n" +
                 "║╔═╗║║╔═╗║║║╚╗║║║╔══╝╚╣─╝║╔═╗║║╔═╗║║╔══╝║║╚╗║║\n" +
@@ -1228,15 +1229,17 @@ public class main {
                 break;
 
             default:
-                System.out.println("Ошибка программа завершает работу \n" +
+
+                System.out.println("ОШИБКА программа завершит работу через 10 секунд!\n" +
                         "╔═══╗╔═══╗╔═══╗╔═══╗╔═══╗\n" +
                         "║╔══╝║╔═╗║║╔═╗║║╔═╗║║╔═╗║\n" +
                         "║╚══╗║╚═╝║║╚═╝║║║─║║║╚═╝║\n" +
                         "║╔══╝║╔╗╔╝║╔╗╔╝║║─║║║╔╗╔╝\n" +
                         "║╚══╗║║║╚╗║║║╚╗║╚═╝║║║║╚╗\n" +
                         "╚═══╝╚╝╚═╝╚╝╚═╝╚═══╝╚╝╚═╝");
-        }
+                Thread.sleep(10000);
 
+        }
 
         System.out.println("Для завершения нажмите ENTER.\n" +
                 "Конфигурация будет скопирована в буфер обмена. \n" +
