@@ -40,6 +40,7 @@ public class main {
         switch (num) {
             case 1 -> {
                 //Строка с телом конфига для ALS-241XX-8.
+
                 var one = (
                         """
                                 set prompt "==SYSNAME=="
@@ -64,6 +65,8 @@ public class main {
                                 exit
                                 exit
                                 """);
+
+
                 String ip01 = input.nextLine();
                 System.out.print("Введите IP КД: ");
                 String ip1 = input.nextLine();
@@ -80,6 +83,8 @@ public class main {
                 String strGv = strMask.replaceAll("==GATEWAY==", gateway1);
                 String strVlan = strGv.replaceAll("==VLAN==", vlan1);
                 String strRes = strVlan.replaceAll("==SYSNAME==", sysname1);
+
+
                 System.out.print("""
                         
                         
@@ -88,7 +93,9 @@ public class main {
                         
                         
                         """);
+
                 System.out.println(strRes);
+
                 System.out.print("""
                         
                         
@@ -103,12 +110,14 @@ public class main {
                         Login:\t\tadmin
                         Password:\tadmin123
                         """);
+
                 StringSelection stringSelection = new StringSelection(strRes);
                 Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard.setContents(stringSelection, null);
             }
             case 2 -> {
                 //Строка с телом конфига для ALS-241XX-16.
+
                 var two = (
                         """
                                 set prompt "==SYSNAME=="
@@ -133,6 +142,7 @@ public class main {
                                 exit
                                 exit
                                 """);
+
                 String ip02 = input.nextLine();
                 System.out.print("Введите IP КД: ");
                 String ip2 = input.nextLine();
@@ -149,11 +159,14 @@ public class main {
                 String strGv2 = strMask2.replaceAll("==GATEWAY==", gateway2);
                 String strVlan2 = strGv2.replaceAll("==VLAN==", vlan2);
                 String strRes2 = strVlan2.replaceAll("==SYSNAME==", sysname2);
+
                 System.out.print("""
                         Для подключения к коммутатору концентрации использовать порты 0/17-0/18
                         ----------------НАЧАЛО КОНФИГУРАЦИИ----------------
                         """);
+
                 System.out.println(strRes2);
+
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию с подтверждением */
@@ -166,12 +179,14 @@ public class main {
                         Login:\t\tadmin
                         Password:\tadmin123
                         """);
+
                 StringSelection stringSelection2 = new StringSelection(strRes2);
                 Clipboard clipboard2 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard2.setContents(stringSelection2, null);
             }
             case 3 -> {
                 //Строка с телом конфига для ALS-241XX-24.
+
                 var three = (
                         """
                                 set prompt "==SYSNAME=="
@@ -205,6 +220,7 @@ public class main {
                                 vlan tagging ==VLAN==
                                 exit
                                 exit""");
+
                 String ip03 = input.nextLine();
                 System.out.print("Введите IP КД: ");
                 String ip3 = input.nextLine();
@@ -221,11 +237,14 @@ public class main {
                 String strGv3 = strMask3.replaceAll("==GATEWAY==", gateway3);
                 String strVlan3 = strGv3.replaceAll("==VLAN==", vlan3);
                 String strRes3 = strVlan3.replaceAll("==SYSNAME==", sysname3);
+
                 System.out.print("""
                         Для подключения к коммутатору концентрации использовать порты 0/25-0/26(-28 для некоторых моделей)
                         ----------------НАЧАЛО КОНФИГУРАЦИИ----------------
                         """);
+
                 System.out.println(strRes3);
+
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию с подтверждением */
@@ -238,12 +257,14 @@ public class main {
                         Login:\t\tadmin
                         Password:\tadmin123
                         """);
+
                 StringSelection stringSelection3 = new StringSelection(strRes3);
                 Clipboard clipboard3 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard3.setContents(stringSelection3, null);
             }
             case 4 -> {
                 //Строка с телом конфига для ALS-24110P-UCN-light.
+
                 var four = (
                         """
                                 set prompt ==SYSNAME==
@@ -279,6 +300,7 @@ public class main {
                                 exit
                                 exit
                                 """);
+
                 String ip04 = input.nextLine();
                 System.out.print("Введите IP КД: ");
                 String ip4 = input.nextLine();
@@ -295,11 +317,14 @@ public class main {
                 String strGv4 = strMask4.replaceAll("==GATEWAY==", gateway4);
                 String strVlan4 = strGv4.replaceAll("==VLAN==", vlan4);
                 String strRes4 = strVlan4.replaceAll("==SYSNAME==", sysname4);
+
                 System.out.print("""
                         Для подключения к коммутатору концентрации использовать порты 0/6-0/9
                         ----------------НАЧАЛО КОНФИГУРАЦИИ----------------
                         """);
+
                 System.out.println(strRes4);
+
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию с подтверждением */
@@ -324,6 +349,7 @@ public class main {
             }
             case 5 -> {
                 //Строка с телом конфига для Dlink-des1210-10-light.
+
                 var five = (
                         """
                                 create account admin admin
@@ -343,6 +369,7 @@ public class main {
                                 # IP
                                 config ipif System ipaddress ==IP==/==MASK== vlan "==VLAN=="
                                 create iproute default ==GATEWAY==""");
+
                 String ip05 = input.nextLine();
                 System.out.print("Введите IP КД: ");
                 String ip5 = input.nextLine();
@@ -359,11 +386,14 @@ public class main {
                 String strGv5 = strMask5.replaceAll("==GATEWAY==", gateway5);
                 String strVlan5 = strGv5.replaceAll("==VLAN==", vlan5);
                 String strRes5 = strVlan5.replaceAll("==SYSNAME==", sysname5);
+
                 System.out.print("""
                         Для подключения к коммутатору концентрации использовать порты 9-10
                         ----------------НАЧАЛО КОНФИГУРАЦИИ----------------
                         """);
+
                 System.out.println(strRes5);
+
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию */
@@ -380,12 +410,14 @@ public class main {
                         Login:\t\tadmin
                         Password:\tadmin123
                         """);
+
                 StringSelection stringSelection5 = new StringSelection(strRes5);
                 Clipboard clipboard5 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard5.setContents(stringSelection5, null);
             }
             case 6 -> {
                 //Строка с телом конфига для Dlink-des1210-28-light.
+
                 var six = (
                         """
                                 create account admin admin
@@ -405,6 +437,7 @@ public class main {
                                 # IP
                                 config ipif System ipaddress ==IP==/==MASK== vlan "==VLAN=="
                                 create iproute default ==GATEWAY==""");
+
                 String ip06 = input.nextLine();
                 System.out.print("Введите IP КД: ");
                 String ip6 = input.nextLine();
@@ -421,11 +454,13 @@ public class main {
                 String strGv6 = strMask6.replaceAll("==GATEWAY==", gateway6);
                 String strVlan6 = strGv6.replaceAll("==VLAN==", vlan6);
                 String strRes6 = strVlan6.replaceAll("==SYSNAME==", sysname6);
+
                 System.out.print("""
                         Для подключения к коммутатору концентрации использовать порты 27-28
                         ----------------НАЧАЛО КОНФИГУРАЦИИ----------------
                         """);
                 System.out.println(strRes6);
+
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию */
@@ -448,6 +483,7 @@ public class main {
             }
             case 7 -> {
                 //Строка с телом конфига для Dlink-des3200-28.
+
                 var seven = (
                         """
                                 create account admin admin
@@ -467,6 +503,7 @@ public class main {
                                 # IP
                                 config ipif System ipaddress ==IP==/==MASK== vlan "==VLAN=="
                                 create iproute default ==GATEWAY==""");
+
                 String ip07 = input.nextLine();
                 System.out.print("Введите IP КД: ");
                 String ip7 = input.nextLine();
@@ -483,11 +520,13 @@ public class main {
                 String strGv7 = strMask7.replaceAll("==GATEWAY==", gateway7);
                 String strVlan7 = strGv7.replaceAll("==VLAN==", vlan7);
                 String strRes7 = strVlan7.replaceAll("==SYSNAME==", sysname7);
+
                 System.out.print("""
                         Для подключения к коммутатору концентрации использовать порты 27-28
                         ----------------НАЧАЛО КОНФИГУРАЦИИ----------------
                         """);
                 System.out.println(strRes7);
+
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию */
@@ -504,12 +543,14 @@ public class main {
                         Login:\t\tadmin
                         Password:\tadmin123
                         """);
+
                 StringSelection stringSelection7 = new StringSelection(strRes7);
                 Clipboard clipboard7 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard7.setContents(stringSelection7, null);
             }
             case 8 -> {
                 //Строка с телом конфига для Eltex_mes3324f_light.
+
                 var eith = (
                         """
                                 enable
@@ -533,13 +574,14 @@ public class main {
                                 !
                                 interface range GigabitEthernet1/0/23-24
                                 switchport mode trunk
-                                switchport trunk allowed vlan add <VLAN>
+                                switchport trunk allowed vlan add ==VLAN==
                                 exit
                                 interface range TengigabitEthernet1/0/1-4
                                 switchport mode trunk
-                                switchport trunk allowed vlan add <VLAN>
+                                switchport trunk allowed vlan add ==VLAN==
                                 end
                                 """);
+
                 String ip08 = input.nextLine();
                 System.out.print("Введите IP КД: ");
                 String ip8 = input.nextLine();
@@ -556,11 +598,13 @@ public class main {
                 String strGv8 = strMask8.replaceAll("==GATEWAY==", gateway8);
                 String strVlan8 = strGv8.replaceAll("==VLAN==", vlan8);
                 String strRes8 = strVlan8.replaceAll("==SYSNAME==", sysname8);
+
                 System.out.print("""
                         ДДля подключения к коммутатору концентрации по оптике использовать порты TenGigabitEthernet1/0/1-1/0/4 или GigabitEthernet 1/0/23-1/0/24
                         ----------------НАЧАЛО КОНФИГУРАЦИИ----------------
                         """);
                 System.out.println(strRes8);
+
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию с подтверждением */
@@ -574,12 +618,14 @@ public class main {
                         Password:\tadmin123
 
                         """);
+
                 StringSelection stringSelection8 = new StringSelection(strRes8);
                 Clipboard clipboard8 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard8.setContents(stringSelection8, null);
             }
             case 9 -> {
                 //Строка с телом конфига для huawei-s2326-light.
+
                 var nine = (
                         """
                                 undo terminal debugging
@@ -628,6 +674,7 @@ public class main {
                                 q
                                 q
                                 """);
+
                 String ip09 = input.nextLine();
                 System.out.print("Введите IP КД: ");
                 String ip9 = input.nextLine();
@@ -644,9 +691,12 @@ public class main {
                 String strGv9 = strMask9.replaceAll("==GATEWAY==", gateway9);
                 String strVlan9 = strGv9.replaceAll("==VLAN==", vlan9);
                 String strRes9 = strVlan9.replaceAll("==SYSNAME==", sysname9);
+
                 System.out.print("Для подключения к коммутатору концентрации использовать порты GigabitEthernet0/0/1-GigabitEthernet0/0/2" +
                         "----------------НАЧАЛО КОНФИГУРАЦИИ----------------\n");
+
                 System.out.println(strRes9);
+
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию с подтверждением */
@@ -725,6 +775,7 @@ public class main {
                                 q
                                 q
                                 """);
+
                 String ip010 = input.nextLine();
                 System.out.print("Введите IP КД: ");
                 String ip10 = input.nextLine();
@@ -741,9 +792,11 @@ public class main {
                 String strGv10 = strMask10.replaceAll("==GATEWAY==", gateway10);
                 String strVlan10 = strGv10.replaceAll("==VLAN==", vlan10);
                 String strRes10 = strVlan10.replaceAll("==SYSNAME==", sysname10);
+
                 System.out.print("Для подключения к коммутатору концентрации использовать порты GigabitEthernet0/0/1-GigabitEthernet0/0/4" +
                         "----------------НАЧАЛО КОНФИГУРАЦИИ----------------\n");
                 System.out.println(strRes10);
+
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию с подтверждением */
@@ -762,6 +815,7 @@ public class main {
                         Login:\t\tadmin
                         Password:\tadmin123
                         """);
+
                 StringSelection stringSelection10 = new StringSelection(strRes10);
                 Clipboard clipboard10 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard10.setContents(stringSelection10, null);
@@ -781,7 +835,7 @@ public class main {
                                 name nms
                                 !
                                 Interface Ethernet1/0/26
-                                media-type copper\s
+                                media-type copper
                                 switchport mode trunk
                                 switchport trunk allowed vlan ==VLAN==
                                 !
@@ -802,6 +856,7 @@ public class main {
                                 !
                                 end
                                 """);
+
                 String ip011 = input.nextLine();
                 System.out.print("Введите IP КД: ");
                 String ip11 = input.nextLine();
@@ -818,17 +873,20 @@ public class main {
                 String strGv11 = strMask11.replaceAll("==GATEWAY==", gateway11);
                 String strVlan11 = strGv11.replaceAll("==VLAN==", vlan11);
                 String strRes11 = strVlan11.replaceAll("==SYSNAME==", sysname11);
+
                 System.out.print("""
                         Для подключения к коммутатору концентрации по оптике использовать порты Ethernet1/0/27-Ethernet1/0/28
                         Для подключения по меди использовать порт Ethernet1/0/26
                         ----------------НАЧАЛО КОНФИГУРАЦИИ----------------
                         """);
+
                 System.out.println(strRes11);
+
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию с подтверждением */
                         write
-                        y<
+                        y
                         /* Перезагружаем коммутатор с подтверждением */
                         reload
                         y
@@ -841,7 +899,8 @@ public class main {
                 clipboard11.setContents(stringSelection11, null);
             }
             case 12 -> {
-                //Строка с телом конфига для qtech-3500-10T-light.
+                //Строка с телом конфига для qtech-3500-10T-light. Возможно косяк, исправить конфиг по шаблону.
+
                 var twelve = (
                         """
                                 enable
@@ -852,18 +911,18 @@ public class main {
                                 hostname ==SYSNAME==
                                 !
                                 vlan ==VLAN==
-                                 name nms
+                                name nms
                                 !
                                 Interface Ethernet1/0/9
-                                 switchport mode trunk
-                                 switchport trunk allowed vlan ==VLAN==
+                                switchport mode trunk
+                                switchport trunk allowed vlan ==VLAN==
                                 !
                                 Interface Ethernet1/0/10
-                                 switchport mode trunk
-                                 switchport trunk allowed vlan ==VLAN==
+                                switchport mode trunk
+                                switchport trunk allowed vlan ==VLAN==
                                 !
                                 interface Vlan==VLAN==
-                                 ip address ==IP== ==MASK==
+                                ip address ==IP== ==MASK==
                                 !
                                 ip route 0.0.0.0/0 ==GATEWAY==
                                 !
@@ -871,6 +930,7 @@ public class main {
                                 !
                                 end
                                 """);
+
                 String ip012 = input.nextLine();
                 System.out.print("Введите IP КД: ");
                 String ip12 = input.nextLine();
@@ -887,11 +947,14 @@ public class main {
                 String strGv12 = strMask12.replaceAll("==GATEWAY==", gateway12);
                 String strVlan12 = strGv12.replaceAll("==VLAN==", vlan12);
                 String strRes12 = strVlan12.replaceAll("==SYSNAME==", sysname12);
+
                 System.out.print("""
                         Для подключения к коммутатору концентрации по оптике использовать порты Ethernet1/0/9-1/0/10\s
                         ----------------НАЧАЛО КОНФИГУРАЦИИ----------------
                         """);
+
                 System.out.println(strRes12);
+
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию с подтверждением */
@@ -909,6 +972,7 @@ public class main {
                         Login:\t\tadmin
                         Password:\tadmin123
                         """);
+
                 StringSelection stringSelection12 = new StringSelection(strRes12);
                 Clipboard clipboard12 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard12.setContents(stringSelection12, null);
@@ -933,7 +997,8 @@ public class main {
                                 switchport trunk allowed vlan ==VLAN==
                                 !
                                 Interface Ethernet1/0/10
-                                switchport mode trunk\\nswitchport trunk allowed vlan <VLAN>
+                                switchport mode trunk
+                                switchport trunk allowed vlan <VLAN>
                                 !
                                 interface Vlan==VLAN==
                                 ip address ==IP== ==MASK==
@@ -944,6 +1009,7 @@ public class main {
                                 !
                                 end
                                 """);
+
                 String ip013 = input.nextLine();
                 System.out.print("Введите IP КД: ");
                 String ip13 = input.nextLine();
@@ -960,13 +1026,16 @@ public class main {
                 String strGv13 = strMask13.replaceAll("==GATEWAY==", gateway13);
                 String strVlan13 = strGv13.replaceAll("==VLAN==", vlan13);
                 String strRes13 = strVlan13.replaceAll("==SYSNAME==", sysname13);
+
                 System.out.print(
                         """
                                 Для подключения к коммутатору концентрации по оптике использовать порт Ethernet1/0/10
                                 Для подключения по меди использовать порт Ethernet1/0/9
                                 ----------------НАЧАЛО КОНФИГУРАЦИИ----------------
                                 """);
+
                 System.out.println(strRes13);
+
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию с подтверждением */
@@ -984,6 +1053,7 @@ public class main {
                         Login:\t\tadmin
                         Password:\tadmin123
                         """);
+
                 StringSelection stringSelection13 = new StringSelection(strRes13);
                 Clipboard clipboard13 = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard13.setContents(stringSelection13, null);
@@ -1017,13 +1087,14 @@ public class main {
                                 !
                                 interface Vlan==VLAN==
                                 ip address ==IP== ==MASK==
-                                !</br>\\n\\
+                                !
                                 ip route 0.0.0.0/0 ==GATEWAY==
                                 !
                                 authentication line console login local
                                 !
                                 end
                                 """);
+
                 String ip014 = input.nextLine();
                 System.out.print("Введите IP КД: ");
                 String ip14 = input.nextLine();
@@ -1040,13 +1111,16 @@ public class main {
                 String strGv14 = strMask14.replaceAll("==GATEWAY==", gateway14);
                 String strVlan14 = strGv14.replaceAll("==VLAN==", vlan14);
                 String strRes14 = strVlan14.replaceAll("==SYSNAME==", sysname14);
+
                 System.out.print(
                         """
                                 Для подключения к коммутатору концентрации по оптике использовать порты Ethernet1/0/27-Ethernet1/0/28
                                 Для подключения по меди использовать порт Ethernet1/0/26
                                 ----------------НАЧАЛО КОНФИГУРАЦИИ----------------
                                 """);
+
                 System.out.println(strRes14);
+
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию с подтверждением */
@@ -1075,7 +1149,8 @@ public class main {
                                 enable
                                 config
                                 !
-                                username admin privilege 15 password 0 admin123\\n!
+                                username admin privilege 15 password 0 admin123
+                                !
                                 hostname ==SYSNAME==
                                 !
                                 vlan ==VLAN==
@@ -1103,6 +1178,7 @@ public class main {
                                 !
                                 end
                                 """);
+
                 String ip015 = input.nextLine();
                 System.out.print("Введите IP КД: ");
                 String ip15 = input.nextLine();
@@ -1119,13 +1195,16 @@ public class main {
                 String strGv15 = strMask15.replaceAll("==GATEWAY==", gateway15);
                 String strVlan15 = strGv15.replaceAll("==VLAN==", vlan15);
                 String strRes15 = strVlan15.replaceAll("==SYSNAME==", sysname15);
+
                 System.out.print(
                         """
                                 Для подключения к коммутатору концентрации по оптике использовать порты Ethernet1/0/27-Ethernet1/0/28
                                 Для подключения по меди использовать порт Ethernet1/0/26
                                 ----------------НАЧАЛО КОНФИГУРАЦИИ----------------
                                 """);
+
                 System.out.println(strRes15);
+
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию с подтверждением */
@@ -1180,6 +1259,7 @@ public class main {
                                 ip default-gateway ==GATEWAY==
                                 exit
                                 """);
+
                 String ip016 = input.nextLine();
                 System.out.print("Введите IP КД: ");
                 String ip16 = input.nextLine();
@@ -1196,12 +1276,15 @@ public class main {
                 String strGv16 = strMask16.replaceAll("==GATEWAY==", gateway16);
                 String strVlan16 = strGv16.replaceAll("==VLAN==", vlan16);
                 String strRes16 = strVlan16.replaceAll("==SYSNAME==", sysname16);
+
                 System.out.print(
                         """
                                 Для подключения к коммутатору концентрации использовать порты Ethernet1/1/1-Ethernet1/1/2\s
                                 ----------------НАЧАЛО КОНФИГУРАЦИИ----------------
                                 """);
+
                 System.out.println(strRes16);
+
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию с подтверждением */
