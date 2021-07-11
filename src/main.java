@@ -1070,7 +1070,7 @@ public class main {
                                 hostname ==SYSNAME==
                                 !
                                 vlan ==VLAN==
-                                 name nms
+                                name nms
                                 !
                                 Interface Ethernet1/0/26
                                 media-type copper
@@ -1093,6 +1093,7 @@ public class main {
                                 authentication line console login local
                                 !
                                 end
+                                
                                 """);
 
                 String ip014 = input.nextLine();
