@@ -397,11 +397,10 @@ public class main {
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию */
-
                         save
-
+                        y
+                        
                         /* Перезагружаем коммутатор с подтверждением */
-
                         reboot
                         y
 
@@ -530,11 +529,10 @@ public class main {
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию */
-
                         save
+                        y
 
                         /* Перезагружаем коммутатор с подтверждением */
-
                         reboot
                         y
 
@@ -700,13 +698,11 @@ public class main {
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию с подтверждением */
-
                         save
                         y
                         y
 
                         /* Перезагружаем коммутатор */
-
                         reboot
                         y
 
@@ -800,16 +796,14 @@ public class main {
                 System.out.print("""
                         ----------------КОНЕЦ КОНФИГУРАЦИИ----------------
                         /* Сохраняем конфигурацию с подтверждением */
-
                         save
                         y
                         y
-
+                        
                         /* Перезагружаем коммутатор с подтверждением */
-
                         reboot
                         y
-
+                        
                         /* После перезагрузки подключиться к коммутатору для проверки */
 
                         Login:\t\tadmin
@@ -1248,7 +1242,7 @@ public class main {
                                 description UPLINK
                                 switchport mode trunk
                                 switchport trunk allowed vlan add ==VLAN==
-                                 no shutdown
+                                no shutdown
                                 !
                                 interface gigabitethernet1/1/2
                                 description UPLINK
